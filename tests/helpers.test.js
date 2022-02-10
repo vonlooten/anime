@@ -1,9 +1,15 @@
+import { stringContains, round } from "../src/helpers";
+
 describe("Helpers", () => {
   // test needed
   test("selectString", () => {});
 
-  // test needed
-  test("stringContains", () => {});
+  test("stringContains - should validate if string contains a word or character", () => {
+    expect(stringContains("the great chinese wall", "great" )).toBeTruthy();
+    expect(stringContains("none", "n")).toBeTruthy();
+    expect(stringContains("the great chinese wall", "none")).toBeFalsy();
+    expect(stringContains("none", 't')).toBeFalsy();
+  });
 
   test("clamp", () => {
     // clamp min
