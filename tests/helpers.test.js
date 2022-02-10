@@ -1,8 +1,11 @@
 describe("Helpers", () => {
-  // how to test
-  test("SelectString", () => {});
+  // test needed
+  test("selectString", () => {});
 
-  test("Clamp", () => {
+  // test needed
+  test("stringContains", () => {});
+
+  test("clamp", () => {
     // clamp min
     expect(anime.clamp(15, 17, 20)).toBe(17);
     // clamp max
@@ -13,7 +16,9 @@ describe("Helpers", () => {
     expect(anime.clamp("val", "min", "max")).toBeNaN();
   });
 
-  test("Random", () => {
+  test("round", () => {});
+
+  test("random", () => {
     // random above min
     expect(anime.random(10, 20)).toBeGreaterThanOrEqual(10);
     // random below max
@@ -22,30 +27,35 @@ describe("Helpers", () => {
     expect(anime.random("hello", "world")).toBe("NaNhello");
   });
 
-  // how to test
-  test("FilterArray", () => {
+  // test needed
+  test("is", () => {});
+
+  // test needed
+  test("filterArray", () => {
     const arr = [15, 20, 30];
-    console.log(anime);
     // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
   });
 
-  // how to test
-  test("ToArray", () => {
-    // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
-  });
+  // test needed
+  test("flattenArray", () => {});
+  // test needed
+  test("toArray", () => {});
 
-  // how to test
-  test("CloneObject", () => {
-    // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
-  });
+  // test needed
+  test("arrayContains", () => {});
 
-  // how to test
-  test("mergeObjects", () => {
-    // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
-  });
+  // test needed
+  test("cloneObject", () => {});
 
-    // how to test
-    test("isBrowser", () => {
-      // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
-    });
+  // test needed
+  test("replaceObjectProps", () => {});
+
+  // test needed
+  test("mergeObjects", () => {});
+
+  // test needed
+  test("applyArguments", () => {});
+
+  // test needed
+  test("isBrowser", () => {});
 });
