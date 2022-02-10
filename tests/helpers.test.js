@@ -1,14 +1,18 @@
-import { stringContains, round } from "../src/helpers";
+import { selectString, stringContains, round, filterArray,toArray } from "../src/helpers";
 
 describe("Helpers", () => {
   // test needed
-  test("selectString", () => {});
+  test("selectString", () => {
+    expect(selectString("target-class")).toBeInstanceOf(NodeList)
+    expect(selectString("1337")).toBeUndefined()
+    expect(selectString("This will throw an error")).toHaveLength(0)
+  });
 
   test("stringContains - should validate if string contains a word or character", () => {
-    expect(stringContains("the great chinese wall", "great" )).toBeTruthy();
+    expect(stringContains("the great chinese wall", "great")).toBeTruthy();
     expect(stringContains("none", "n")).toBeTruthy();
     expect(stringContains("the great chinese wall", "none")).toBeFalsy();
-    expect(stringContains("none", 't')).toBeFalsy();
+    expect(stringContains("none", "t")).toBeFalsy();
   });
 
   test("clamp", () => {
@@ -39,13 +43,24 @@ describe("Helpers", () => {
   // test needed
   test("filterArray", () => {
     const arr = [15, 20, 30];
-    // expect(anime.helpers.helpersfilterArray(arr)).arrayContaining([15,20,30])
+    filterArray(arr, () => {});
+    expect(arr).toEqual(expect.arrayContaining([15, 20, 30]));
+    expect(toArray(arr)).toBeInstanceOf(Object)
   });
 
   // test needed
   test("flattenArray", () => {});
+
   // test needed
-  test("toArray", () => {});
+  test("toArray", () => {
+    const arr = toArray([1,2,3]);
+    expect(arr).toBeInstanceOf(Object)
+    expect(arr).toHaveLength(3)
+
+    const nodes = toArray(document.querySelectorAll(".target-class"))
+    expect(nodes).toBeInstanceOf(Object)
+    expect(nodes).toHaveLength(4)
+  });
 
   // test needed
   test("arrayContains", () => {});
