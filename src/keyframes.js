@@ -1,6 +1,5 @@
 import {
   is,
-  cloneObject,
   mergeObjects,
   flattenArray,
   filterArray,
@@ -16,7 +15,7 @@ import {
 
 function convertPropertyValueToTweens(propertyValue, tweenSettings) {
   let value = propertyValue;
-  let settings = cloneObject(tweenSettings);
+  let settings = Object.assign({},tweenSettings);
   // Override duration if easing is a spring
   if (springTestRgx.test(settings.easing)) {
     settings.duration = spring(settings.easing);

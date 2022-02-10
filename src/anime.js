@@ -11,7 +11,6 @@ import {
   flattenArray,
   toArray,
   arrayContains,
-  cloneObject,
   replaceObjectProps,
   mergeObjects,
 } from './helpers.js';
