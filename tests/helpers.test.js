@@ -1,11 +1,18 @@
-import { selectString, stringContains, round, filterArray,toArray, replaceObjectProps } from "../src/helpers";
+import {
+  selectString,
+  stringContains,
+  round,
+  filterArray,
+  toArray,
+  replaceObjectProps,
+} from "../src/helpers";
 
 describe("Helpers", () => {
   // test needed
   test("selectString", () => {
-    expect(selectString("target-class")).toBeInstanceOf(NodeList)
-    expect(selectString("1337")).toBeUndefined()
-    expect(selectString("This will throw an error")).toHaveLength(0)
+    expect(selectString("target-class")).toBeInstanceOf(NodeList);
+    expect(selectString("1337")).toBeUndefined();
+    expect(selectString("This will throw an error")).toHaveLength(0);
   });
 
   test("stringContains - should validate if string contains a word or character", () => {
@@ -45,7 +52,7 @@ describe("Helpers", () => {
     const arr = [15, 20, 30];
     filterArray(arr, () => {});
     expect(arr).toEqual(expect.arrayContaining([15, 20, 30]));
-    expect(toArray(arr)).toBeInstanceOf(Object)
+    expect(toArray(arr)).toBeInstanceOf(Object);
   });
 
   // test needed
@@ -53,13 +60,13 @@ describe("Helpers", () => {
 
   // test needed
   test("toArray", () => {
-    const arr = toArray([1,2,3]);
-    expect(arr).toBeInstanceOf(Object)
-    expect(arr).toHaveLength(3)
+    const arr = toArray([1, 2, 3]);
+    expect(arr).toBeInstanceOf(Object);
+    expect(arr).toHaveLength(3);
 
-    const nodes = toArray(document.querySelectorAll(".target-class"))
-    expect(nodes).toBeInstanceOf(Object)
-    expect(nodes).toHaveLength(4)
+    const nodes = toArray(document.querySelectorAll(".target-class"));
+    expect(nodes).toBeInstanceOf(Object);
+    expect(nodes).toHaveLength(4);
   });
 
   // test needed
@@ -67,9 +74,12 @@ describe("Helpers", () => {
 
   // test needed
   test("replaceObjectProps", () => {
-    const arr1 = ["lemon","apple"];
-    const arr2 = ["juice","water"];
-    expect(replaceObjectProps(arr1,arr2)).toMatchObject({"0": "juice", "1": "water"});
+    const arr1 = ["lemon", "apple"];
+    const arr2 = ["juice", "water"];
+    expect(replaceObjectProps(arr1, arr2)).toMatchObject({
+      0: "juice",
+      1: "water",
+    });
   });
 
   // test needed
