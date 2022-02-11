@@ -1,4 +1,4 @@
-import { selectString, stringContains, round, filterArray,toArray } from "../src/helpers";
+import { selectString, stringContains, round, filterArray,toArray, replaceObjectProps } from "../src/helpers";
 
 describe("Helpers", () => {
   // test needed
@@ -66,10 +66,11 @@ describe("Helpers", () => {
   test("arrayContains", () => {});
 
   // test needed
-  test("cloneObject", () => {});
-
-  // test needed
-  test("replaceObjectProps", () => {});
+  test("replaceObjectProps", () => {
+    const arr1 = ["lemon","apple"];
+    const arr2 = ["juice","water"];
+    expect(replaceObjectProps(arr1,arr2)).toMatchObject({"0": "juice", "1": "water"});
+  });
 
   // test needed
   test("mergeObjects", () => {});
